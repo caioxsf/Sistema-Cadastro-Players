@@ -13,13 +13,12 @@ Sistema para cadastrar players, excluir, ordenar (a - z) e mostrar jogadores
 
 - Mostra o relatório de todos os players cadastrados:
 
-  ![relatorio](https://github.com/caioxsf/Sistema-Cadastro-Players/assets/100533663/57c42b7b-db18-49b7-8a92-9f54b9ff6f48)
+  ![relatorio1](https://github.com/caioxsf/Sistema-Cadastro-Players/assets/100533663/9f7b49f5-3b7e-42b0-ac70-87e335367090)
 
 - Ao selecionar a opção de ordenar, o programa ordena os players de A - Z e clicando em relatório denovo ele exibe os 
   players ordenados:
 
-  ![ordenacao](https://github.com/caioxsf/Sistema-Cadastro-Players/assets/100533663/d784fe67-6eeb-44ef-a6e7-6299ad771dce)
-
+  ![relatorio ordenado1](https://github.com/caioxsf/Sistema-Cadastro-Players/assets/100533663/d21b9f19-7074-4cd5-bdbe-ed4f436475ee)
 
   ![relatorio ordenado](https://github.com/caioxsf/Sistema-Cadastro-Players/assets/100533663/7e42d904-3e65-47da-94c0-1bbb71c11e12)
 

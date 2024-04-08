@@ -26,6 +26,11 @@ void pausar ()
     system("pause\n");
 }
 
+void linha ()
+{
+    printf("------------------------------\n");
+}
+
 int cadastro_vazio (int *tl)
 {
     if(*tl==0)
@@ -49,7 +54,7 @@ void cadastro (Player play[], int *tl)
             play[*tl].codigo=cod;
             (*tl)++;
             printf("Player cadastrado com sucesso!\n");
-            printf("------------------------------\n");
+            linha ();
         }
         else
         {
@@ -63,7 +68,7 @@ void cadastro (Player play[], int *tl)
             if(achou==1)
             {
                 printf("Player ja cadastrado no banco de dados!\n");
-                printf("------------------------------\n");
+                linha ();
             }
             else
             {
@@ -72,7 +77,7 @@ void cadastro (Player play[], int *tl)
                 play[*tl].codigo=cod;
                 (*tl)++;
                 printf("Player cadastrado com sucesso!\n");
-                printf("------------------------------\n");
+                linha ();
             }
         }
 
@@ -113,13 +118,13 @@ void excluir (Player play[], int *tl)
                         }
                         (*tl)--;
                         printf("%s excluido com sucesso!\n", nome);
-                        printf("------------------------------\n");
+                        linha ();
                     }
                 }
                 else
                 {
                     printf("Codigo nao encontado!\n");
-                    printf("------------------------------\n");
+                    linha ();
                 }
 
                 printf("\nCodigo para excluir: ");
@@ -129,7 +134,7 @@ void excluir (Player play[], int *tl)
         else
         {
             printf("\nNenhum player cadastrado!\n");
-            printf("------------------------------\n");
+            linha ();
             pausar();
         }
 }
@@ -137,7 +142,7 @@ void excluir (Player play[], int *tl)
 void ordenar (Player play[], int *tl)
 {
     char aux[50];
-    int i, j;
+    int i, j, auxC;
 
     if(!cadastro_vazio(tl))
     {
@@ -148,20 +153,23 @@ void ordenar (Player play[], int *tl)
                 int r;
                 r=strcmp(play[i].nome,play[j].nome);
                 if(r>0)
-                {
+                {   
                     strcpy(aux,play[i].nome);
                     strcpy(play[i].nome,play[j].nome);
                     strcpy(play[j].nome,aux);
+                    auxC=play[i].codigo;
+                    play[i].codigo=play[j].codigo;
+                    play[j].codigo=auxC;
                 }
             }
         }
         printf("\nOrdenacao feita com sucesso!\n");
-        printf("------------------------------\n");
+        linha ();
     }
     else
     {
         printf("\nNenhum player cadastrado!\n");
-        printf("------------------------------\n");
+        linha ();
     }
     pausar();
 }
@@ -170,19 +178,19 @@ void relatorio (Player play[], int *tl)
 {
     if(!cadastro_vazio(tl))
     {
-        printf("------------------------------\n");
+        linha ();
         int i;
         for(i=0;i<*tl;i++)
         {
             printf("Codigo: %d\n", play[i].codigo);
             printf("Nome: %s\n", play[i].nome);
-            printf("------------------------------\n");
+            linha ();
         }
     }
     else
     {
         printf("\nNenhum player cadastrado!\n");
-        printf("------------------------------\n");
+        linha ();
     }
     pausar();
 }
@@ -229,6 +237,11 @@ int main ()
 
             case 'D':
                 relatorio(play, &TL);
+            break;
+
+            default:
+                printf("Opcao invalida!\n");
+                Sleep(1);
             break;
         }
         m=menu();

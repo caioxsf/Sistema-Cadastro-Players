@@ -1,6 +1,6 @@
-# Sistema-Cadastro-Players
+# sistema-cadastro-player
 Sistema para cadastrar players, excluir, ordenar (a - z) e mostrar jogadores
-- feito em C
+- feito em C com a utilização de função e struct.
 
 - Ao executar o programa ele abre diretamente no menu:
  
